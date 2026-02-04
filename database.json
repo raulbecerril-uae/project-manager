@@ -1,0 +1,419 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Raul",
+      "role": "Admin",
+      "title": "System Administrator",
+      "avatar_url": "https://ui-avatars.com/api/?name=Raul&background=0D8ABC&color=fff"
+    },
+    {
+      "id": 2,
+      "name": "Sarah",
+      "role": "Team",
+      "title": "UI/UX Designer",
+      "avatar_url": "https://ui-avatars.com/api/?name=Sarah&background=random"
+    },
+    {
+      "id": 3,
+      "name": "John",
+      "role": "Team",
+      "title": "Backend Developer",
+      "avatar_url": "https://ui-avatars.com/api/?name=John&background=random"
+    },
+    {
+      "id": 4,
+      "name": "Emma",
+      "role": "HR",
+      "title": "HR Manager",
+      "avatar_url": "https://ui-avatars.com/api/?name=Emma&background=random"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Ball Pump – Interactive Game",
+      "description": "End-to-end development of a custom C++ game integrated with an Arduino-based pressure sensor. The sensor captures real-time air pressure and sends values directly to the game.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-11-01",
+      "deadline": "2025-12-05",
+      "priority": "High",
+      "tech_stack_json": "[\"C++\",\"Arduino\",\"Unity\"]",
+      "tech_stack": [
+        "C++",
+        "Arduino",
+        "Unity"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Immersive Room (v1)",
+      "description": "First version of an immersive room experience with full-body tracking, allowing players to interact and move naturally inside the game environment.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-11-01",
+      "deadline": "2025-12-05",
+      "priority": "High",
+      "tech_stack_json": "[\"Unity\", \"C++\", \"Arduino\"]"
+    },
+    {
+      "id": 3,
+      "name": "DIFC – Real-Time Quiz",
+      "description": "Real-time quiz platform similar to Kahoot. Users join from phones, answer questions simultaneously, and see results on a main screen.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-11-10",
+      "deadline": "2025-11-24",
+      "priority": "Medium",
+      "tech_stack_json": "[\"JavaScript\", \"WebSocket\", \"MongoDB\"]"
+    },
+    {
+      "id": 4,
+      "name": "Event Ticketing System",
+      "description": "Ticketing system allowing users to register, log in, purchase tickets, and download/print them. Includes admin panel for event management.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-11-15",
+      "deadline": "2025-12-06",
+      "priority": "Critical",
+      "tech_stack_json": "[\"React\", \"Express\", \"MySQL\"]"
+    },
+    {
+      "id": 5,
+      "name": "Cycle Game - Rebuild",
+      "description": "Rebuild the 'Cycle Game' with Arduino connection and develop a new game platform with a new API server on no1events server.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-12-01",
+      "deadline": "2026-01-05",
+      "priority": "High",
+      "tech_stack_json": "[\"Unity\",\"Arduino\",\"C++\",\"API\"]",
+      "tech_stack": [
+        "Unity",
+        "Arduino",
+        "C++",
+        "API"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Fast Feet Game - Rebuild",
+      "description": "Rebuild the 'Fast Feet' game with Arduino connected to sensors and lights. Creating a responsive game that reacts to player movements.",
+      "status": "In Development",
+      "progress": 10,
+      "start_date": "2025-12-05",
+      "deadline": "2026-01-09",
+      "priority": "High",
+      "tech_stack_json": "[\"Arduino\", \"C++\", \"Unity\", \"Sensors\"]"
+    },
+    {
+      "id": 8,
+      "name": "NHRI Engagement App",
+      "description": "Rebrand and extend the quiz/engagement app for the National Human Rights Institution, updating all questions and visuals.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-12-10",
+      "deadline": "2025-12-13",
+      "priority": "Low",
+      "tech_stack_json": "[\"JavaScript\", \"WebSocket\", \"React\"]"
+    },
+    {
+      "id": 9,
+      "name": "UAE Pro League History",
+      "description": "Bilingual (Arabic/English) history experience for the UAE Pro League with club trophies and tournament cards.",
+      "status": "Done",
+      "progress": 100,
+      "start_date": "2025-12-15",
+      "deadline": "2025-12-17",
+      "priority": "Medium",
+      "tech_stack_json": "[\"React\", \"Next.js\", \"Tailwind\"]"
+    },
+    {
+      "id": 12,
+      "start_date": "2026-01-21T00:00:00.000Z",
+      "description": "Design and develop high impact 3D holographic visual content. New animations, product visualizations, and branding sequences.",
+      "tech_stack": [
+        "Hologram",
+        "3D",
+        "Animation"
+      ],
+      "name": "Showroom: Holographic Fan",
+      "deadline": "2026-02-15T00:00:00.000Z",
+      "status": "In Development",
+      "priority": "High",
+      "tech_stack_json": "[\"Hologram\",\"3D\",\"Animation\"]"
+    },
+    {
+      "id": 13,
+      "start_date": "2026-01-21T00:00:00.000Z",
+      "description": "Upgrade and redesign vertical interface. Improve UI/UX layout, navigation flows, and response time.",
+      "tech_stack": [
+        "Touchscreen",
+        "UI/UX",
+        "Interactive"
+      ],
+      "name": "Showroom: Touchscreen 1 (Vertical)",
+      "deadline": "2026-02-15T00:00:00.000Z",
+      "status": "In Development",
+      "priority": "High",
+      "tech_stack_json": "[\"Touchscreen\",\"UI/UX\",\"Interactive\"]"
+    },
+    {
+      "id": 14,
+      "start_date": "2026-01-21T00:00:00.000Z",
+      "description": "New interactive content modules. Enhance user interaction logic and storytelling elements.",
+      "tech_stack": [
+        "Touchscreen",
+        "CMS",
+        "Logic"
+      ],
+      "name": "Showroom: Touchscreen 2 (Vertical)",
+      "deadline": "2026-02-15T00:00:00.000Z",
+      "status": "In Development",
+      "priority": "High",
+      "tech_stack_json": "[\"Touchscreen\",\"CMS\",\"Logic\"]"
+    },
+    {
+      "id": 15,
+      "start_date": "2026-01-21T00:00:00.000Z",
+      "description": "Large scale visual experiences, brand presentations, and synchronized multi-screen content.",
+      "tech_stack": [
+        "LED",
+        "Motion Graphics",
+        "4K"
+      ],
+      "name": "Showroom: Main LED Screen",
+      "deadline": "2026-02-15T00:00:00.000Z",
+      "status": "In Development",
+      "priority": "High",
+      "tech_stack_json": "[\"LED\",\"Motion Graphics\",\"4K\"]"
+    },
+    {
+      "id": 16,
+      "name": "Photobooth Experience",
+      "description": "Develop multiple photobooth experience versions designed for events and entertainment environments. Features may include AI background replacement, augmented reality filters, branded overlays, facial tracking effects, gesture based capture, instant sharing through QR code or mobile download, and multiplayer photo sessions.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Medium",
+      "tech_stack_json": "[\"AI\",\"AR\",\"Computer Vision\",\"Mobile\"]",
+      "tech_stack": [
+        "AI",
+        "AR",
+        "Computer Vision",
+        "Mobile"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Kahoot System Upgrade",
+      "description": "Develop an upgraded interactive quiz and audience engagement platform with enhanced UI, custom branding, real time participation via mobile devices, leaderboard systems, analytics dashboards, and multiple question formats.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "High",
+      "tech_stack_json": "[\"JavaScript\",\"WebSocket\",\"React\",\"Analytics\"]",
+      "tech_stack": [
+        "JavaScript",
+        "WebSocket",
+        "React",
+        "Analytics"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Interactive Photo Experience",
+      "description": "Build a real time system that allows users to capture photos on their mobile devices and instantly display them on large LED screens. The experience should include moderation controls, automatic visual enhancements, dynamic gallery layouts, and event themed animations.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Medium",
+      "tech_stack_json": "[\"Mobile\",\"LED Integration\",\"Real-time Sync\"]",
+      "tech_stack": [
+        "Mobile",
+        "LED Integration",
+        "Real-time Sync"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Interactive Text Display",
+      "description": "Create a live messaging platform where users can submit text from their mobile devices and display it instantly on large screens. The system should support animated typography, customizable visual styles, content moderation, and audience polls.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Low",
+      "tech_stack_json": "[\"WebSocket\",\"Typography\",\"Mobile\"]",
+      "tech_stack": [
+        "WebSocket",
+        "Typography",
+        "Mobile"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "AI Drawing Platform",
+      "description": "Develop a collaborative AI assisted drawing platform where users create sketches on their mobile devices and display them on large screens in real time. The system can enhance drawings using AI stylization, animation effects, and artistic filters.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Medium",
+      "tech_stack_json": "[\"AI\",\"Canvas API\",\"Mobile\",\"Real-time\"]",
+      "tech_stack": [
+        "AI",
+        "Canvas API",
+        "Mobile",
+        "Real-time"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "New Interactive Games",
+      "description": "Design and develop new interactive gaming experiences tailored for exhibitions, fan zones, and immersive environments. Games should support multiple input methods including mobile devices, gesture tracking, touch interaction, and external controllers.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "High",
+      "tech_stack_json": "[\"Unity\",\"Gesture Tracking\",\"Mobile\"]",
+      "tech_stack": [
+        "Unity",
+        "Gesture Tracking",
+        "Mobile"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Interactive Wall Effects",
+      "description": "Develop immersive LED wall experiences that react to human movement, touch interaction, or gesture tracking. Effects may include particle simulations, fluid visual effects, light trails, and environmental transformations.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Medium",
+      "tech_stack_json": "[\"Computer Vision\",\"LED\",\"Particle Systems\"]",
+      "tech_stack": [
+        "Computer Vision",
+        "LED",
+        "Particle Systems"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Interactive Big Screen Game",
+      "description": "Create entertainment focused games designed specifically for large LED screens or projection walls. The games should allow interaction through smartphones, motion tracking systems, or gesture controls.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Medium",
+      "tech_stack_json": "[\"Unity\",\"Mobile\",\"Motion Tracking\"]",
+      "tech_stack": [
+        "Unity",
+        "Mobile",
+        "Motion Tracking"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Penalty Shooter Game",
+      "description": "Develop an interactive football penalty shooting experience using body tracking technology such as Kinect or computer vision pose detection. Users perform physical kicking gestures to shoot virtual balls toward a goal.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Low",
+      "tech_stack_json": "[\"Kinect\",\"Computer Vision\",\"Unity\"]",
+      "tech_stack": [
+        "Kinect",
+        "Computer Vision",
+        "Unity"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Graffiti Paint Experience",
+      "description": "Create a digital graffiti painting platform where users simulate spray painting using motion tracking, touchscreens, or mobile devices. Features include realistic spray paint effects, customizable brush sizes, and color palettes.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Low",
+      "tech_stack_json": "[\"Motion Tracking\",\"Canvas API\",\"Touch\"]",
+      "tech_stack": [
+        "Motion Tracking",
+        "Canvas API",
+        "Touch"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Big Size Platform Game (Mario Style)",
+      "description": "Develop a large scale side scrolling platform game designed for wall sized LED displays. Players control characters using their mobile phones or gesture input. The game should support single player and multiplayer modes.",
+      "status": "Upcoming",
+      "progress": 0,
+      "start_date": null,
+      "deadline": null,
+      "priority": "Medium",
+      "tech_stack_json": "[\"Unity\",\"Mobile\",\"Gesture Input\"]",
+      "tech_stack": [
+        "Unity",
+        "Mobile",
+        "Gesture Input"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "project_id": 6,
+      "assigned_to_user_id": 1,
+      "title": "Sensor Integration Testing",
+      "status": "In Progress",
+      "complexity": "High",
+      "due_date": "2026-01-02"
+    },
+    {
+      "id": 2,
+      "project_id": 6,
+      "assigned_to_user_id": 2,
+      "title": "Game Loop Logic",
+      "status": "Todo",
+      "complexity": "Medium",
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": 3,
+      "project_id": 5,
+      "assigned_to_user_id": 1,
+      "title": "API Documentation",
+      "status": "Done",
+      "complexity": "Low",
+      "due_date": "2025-12-20"
+    },
+    {
+      "id": 4,
+      "project_id": 4,
+      "assigned_to_user_id": 3,
+      "title": "Payment Gateway Hook",
+      "status": "Done",
+      "complexity": "High",
+      "due_date": "2025-11-30"
+    },
+    {
+      "id": 5,
+      "project_id": 1,
+      "assigned_to_user_id": 2,
+      "title": "Pressure Sensor Calibration",
+      "status": "Done",
+      "complexity": "Medium",
+      "due_date": "2025-11-10"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Management System | Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js for Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            primary: '#1e293b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .pastel-orange {
+      background-color: #FCE8D5;
+    }
+
+    .pastel-blue {
+      background-color: #E3F2FD;
+    }
+
+    .pastel-green {
+      background-color: #E8F5E9;
+    }
+
+    .pastel-pink {
+      background-color: #FCE4EC;
+    }
+
+    /* Smooth scrolling sidebar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Awesome Hover Effect */
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+      z-index: 10;
+    }
+
+    /* Specific colored shadows matching backgrounds */
+    .pastel-orange.card-hover:hover {
+      box-shadow: 0 25px 50px -12px rgba(251, 146, 60, 0.25);
+    }
+
+    .pastel-blue.card-hover:hover {
+      box-shadow: 0 25px 50px -12px rgba(96, 165, 250, 0.25);
+    }
+
+    .pastel-green.card-hover:hover {
+      box-shadow: 0 25px 50px -12px rgba(74, 222, 128, 0.25);
+    }
+
+    .pastel-pink.card-hover:hover {
+      box-shadow: 0 25px 50px -12px rgba(244, 114, 182, 0.25);
+    }
+  </style>
+</head>
+
+<body class="flex h-screen overflow-hidden text-gray-800 bg-gray-50 font-sans">
+
+  <!-- Login Screen (Keep existing, slightly cleaned up) -->
+  <div id="login-screen" class="fixed inset-0 bg-white z-[100] flex items-center justify-center p-4">
+    <div class="max-w-md w-full text-center animate-fade-in">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gray-900 rounded-2xl mb-6 text-white shadow-xl">
+        <i data-lucide="layout-grid" class="w-10 h-10"></i>
+      </div>
+      <h1 class="text-4xl font-bold text-gray-900 mb-2">Project Management System</h1>
+      <p class="text-gray-500 mb-10">IT Project Management System</p>
+
+      <div class="space-y-4" id="login-user-list"></div>
+    </div>
+  </div>
+
+  <!-- Minimal Sidebar -->
+  <aside
+    class="w-24 bg-white hidden md:flex flex-col items-center py-8 z-20 border-r border-gray-100/50 shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
+    <div class="mb-12">
+      <div
+        class="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center shadow-lg shadow-gray-200">
+        <i data-lucide="layout-grid" class="w-6 h-6"></i>
+      </div>
+    </div>
+
+    <nav class="flex-1 space-y-8 w-full flex flex-col items-center" id="main-nav">
+      <button onclick="showSection('projects')"
+        class="nav-item w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-gray-900 transition-colors relative group">
+        <i data-lucide="home" class="w-6 h-6"></i>
+        <span
+          class="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Projects</span>
+      </button>
+      <button onclick="showSection('mytasks')"
+        class="nav-item w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-gray-900 transition-colors relative group">
+        <i data-lucide="check-square" class="w-6 h-6"></i>
+        <span
+          class="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Tasks</span>
+      </button>
+      <button onclick="showSection('team')"
+        class="nav-item w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-gray-900 transition-colors relative group">
+        <i data-lucide="users" class="w-6 h-6"></i>
+        <span
+          class="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Team</span>
+      </button>
+      <button onclick="showSection('reports')"
+        class="nav-item w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-gray-900 transition-colors relative group">
+        <i data-lucide="pie-chart" class="w-6 h-6"></i>
+        <span
+          class="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Reports</span>
+      </button>
+      <button onclick="showSection('ideas')"
+        class="nav-item w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-gray-900 transition-colors relative group">
+        <i data-lucide="lightbulb" class="w-6 h-6"></i>
+        <span
+          class="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Ideas</span>
+      </button>
+      <button onclick="showSection('settings')"
+        class="nav-item w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-gray-900 transition-colors relative group">
+        <i data-lucide="settings" class="w-6 h-6"></i>
+        <span
+          class="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Settings</span>
+      </button>
+    </nav>
+
+    <div class="mt-auto">
+      <button onclick="logout()"
+        class="w-10 h-10 flex items-center justify-center rounded-xl text-red-300 hover:text-red-500 hover:bg-red-50 transition-colors"
+        title="Logout">
+        <i data-lucide="log-out" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8 overflow-y-auto no-scrollbar relative w-full">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-12">
+      <div>
+        <h1 class="text-4xl font-black text-gray-900 tracking-tight mb-1" id="page-title">Dashboard</h1>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="relative group">
+          <i data-lucide="search"
+            class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-gray-900 transition-colors"></i>
+          <input type="text" id="global-search" placeholder="Search..."
+            class="bg-white pl-12 pr-6 py-3 rounded-full text-sm font-medium w-64 focus:w-80 transition-all outline-none shadow-sm focus:shadow-md ring-0">
+        </div>
+
+        <!-- Profile -->
+        <div class="flex items-center gap-3 pl-6 border-l border-gray-200">
+          <button
+            class="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-gray-400 hover:text-gray-800 relative">
+            <i data-lucide="bell" class="w-5 h-5"></i>
+            <span class="absolute top-2 right-2.5 w-2 h-2 bg-red-400 rounded-full border-2 border-white"></span>
+          </button>
+          <img id="current-user-avatar" src=""
+            class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover">
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Body -->
+    <div class="flex-1 overflow-auto px-8 sm:px-12 pb-8">
+
+      <!-- PROJECTS VIEW -->
+      <div id="section-projects" class="section-view animate-fade-in w-full">
+        <!-- Date Header -->
+        <div class="flex justify-between items-end mb-10">
+          <div class="flex gap-12">
+            <div>
+              <h4 class="text-3xl font-bold text-gray-900" id="stat-total-projects">0</h4>
+              <p class="text-sm text-gray-400 mt-1 font-medium cursor-pointer" onclick="filterProjects('all')">Total
+                Projects</p>
+            </div>
+            <div>
+              <h4 class="text-3xl font-bold text-gray-900" id="stat-in-dev">0</h4>
+              <p class="text-sm text-gray-400 mt-1 font-medium cursor-pointer" onclick="filterProjects('inprogress')">In
+                Progress</p>
+            </div>
+            <div>
+              <h4 class="text-3xl font-bold text-gray-900" id="stat-delivered">0</h4>
+              <p class="text-sm text-gray-400 mt-1 font-medium cursor-pointer" onclick="filterProjects('delivered')">
+                Delivered</p>
+            </div>
+            <div>
+              <h4 class="text-3xl font-bold text-gray-900" id="stat-upcoming">0</h4>
+              <p class="text-sm text-gray-400 mt-1 font-medium cursor-pointer" onclick="filterProjects('upcoming')">
+                Upcoming</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="view-toggle-btn" onclick="toggleViewMode()"
+              class="bg-gray-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition-transform hover:scale-105 shadow-lg shadow-gray-300 relative group"
+              title="Toggle View">
+              <i data-lucide="list" class="w-5 h-5"></i>
+              <span
+                class="absolute bottom-full mb-2 bg-gray-800 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Toggle
+                View</span>
+            </button>
+
+            <button onclick="openCreateModal()"
+              class="bg-gray-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition-transform hover:scale-105 shadow-lg shadow-gray-300 relative group"
+              title="Create Project">
+              <i data-lucide="plus" class="w-5 h-5"></i>
+              <span
+                class="absolute bottom-full mb-2 bg-gray-800 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Create
+                Project</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Cards injected here -->
+        </div>
+      </div>
+
+      <!-- OTHER SECTIONS (Team, Tasks etc - Keep layout wrapper but content same) -->
+      <div id="section-mytasks" class="section-view hidden animate-fade-in w-full">
+        <div id="mytasks-list" class="space-y-3"></div>
+      </div>
+
+      <div id="section-team" class="section-view hidden animate-fade-in w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="team-grid"></div>
+      </div>
+
+      <div id="section-reports" class="section-view hidden animate-fade-in w-full">
+        <div class="bg-white p-8 rounded-3xl shadow-sm">
+          <canvas id="chart-project-status"></canvas>
+        </div>
+      </div>
+
+      <div id="section-ideas" class="section-view hidden animate-fade-in w-full">
+        <div class="flex justify-between items-end mb-10">
+          <div>
+            <h4 class="text-3xl font-bold text-gray-900" id="stat-total-ideas">0</h4>
+            <p class="text-sm text-gray-400 mt-1 font-medium">Future Concepts</p>
+          </div>
+          <button onclick="openCreateModal('Idea')"
+            class="bg-yellow-400 text-yellow-900 w-10 h-10 rounded-full flex items-center justify-center hover:bg-yellow-300 transition-transform hover:scale-105 shadow-lg shadow-yellow-200">
+            <i data-lucide="plus" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div id="ideas-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Ideas injected here -->
+        </div>
+      </div>
+
+      <div id="section-settings" class="section-view hidden animate-fade-in max-w-2xl">
+        <div class="bg-white p-8 rounded-3xl shadow-sm">
+          <h3 class="font-bold text-lg mb-6">Settings</h3>
+          <p class="text-gray-500">Global configurations for Project Management System.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modals (Keep existing structure but clean up styles if needed) -->
+  <div id="projectDetailModal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title"
+    role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="fixed inset-0 bg-gray-500/20 backdrop-blur-sm transition-opacity"
+        onclick="closeModal('projectDetailModal')"></div>
+      <div
+        class="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full">
+        <!-- Keep existing Modal Internal Content -->
+        <div class="px-8 py-5 border-b border-gray-100 flex justify-between items-start bg-white">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900" id="detail-title">Project Title</h2>
+            <p class="text-gray-400 mt-6" id="detail-desc">...</p>
+          </div>
+          <div class="flex gap-2">
+            <button id="edit-btn" onclick="toggleEditMode()"
+              class="hidden bg-gray-50 p-2 rounded-full text-gray-400 hover:text-blue-600 transition-colors"
+              title="Edit">
+              <i data-lucide="pencil" class="w-5 h-5"></i>
+            </button>
+            <button id="delete-btn" onclick="deleteProject()"
+              class="hidden bg-gray-50 p-2 rounded-full text-gray-400 hover:text-red-500 transition-colors"
+              title="Delete">
+              <i data-lucide="trash-2" class="w-5 h-5"></i>
+            </button>
+            <button onclick="closeModal('projectDetailModal')"
+              class="bg-gray-50 p-2 rounded-full text-gray-400 hover:text-gray-900 transition-colors">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Removed Button Bar -->
+        <div class="p-8" id="detail-content">
+          <!-- Dynamic -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="newProjectModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-gray-500/20 backdrop-blur-sm" onclick="closeModal('newProjectModal')"></div>
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md relative z-10 p-6">
+      <!-- Keep existing form logic -->
+      <h3 class="text-xl font-bold mb-4">New Project</h3>
+      <form id="create-project-form" class="space-y-4">
+        <input type="text" name="name" required placeholder="Project Name"
+          class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-gray-200">
+        <textarea name="description" placeholder="Description" rows="2"
+          class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-gray-200"></textarea>
+        <div class="flex gap-4">
+          <select name="priority" class="flex-1 bg-gray-50 border-none rounded-xl px-4 py-3">
+            <option>Medium</option>
+            <option>High</option>
+            <option>Critical</option>
+            <option>Low</option>
+          </select>
+          <select name="status" class="flex-1 bg-gray-50 border-none rounded-xl px-4 py-3">
+            <option>Planning</option>
+            <option>In Development</option>
+            <option>Done</option>
+          </select>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-1">
+            <label class="text-xs text-gray-400 pl-2">Submitted Date</label>
+            <input type="date" name="start_date"
+              class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-gray-200">
+          </div>
+          <div class="flex-1">
+            <label class="text-xs text-gray-400 pl-2">Delivery Date</label>
+            <input type="date" name="deadline"
+              class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-gray-200">
+          </div>
+        </div>
+        <input type="text" name="tech_stack_str" placeholder="Tags (React, Node)"
+          class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-gray-200">
+        <button type="submit" class="w-full bg-gray-900 text-white rounded-xl py-3 font-semibold hover:bg-black">Create
+          Project</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+
+</html>

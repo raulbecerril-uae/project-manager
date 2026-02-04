@@ -119,21 +119,21 @@ window.showSection = (sectionId) => {
 // --- Data Fetching ---
 async function fetchProjects() {
     try {
-        const res = await fetch('api/projects');
+        const res = await fetch('api/projects.php');
         appState.projects = await res.json();
     } catch (e) { console.error(e); }
 }
 
 async function fetchUsers() {
     try {
-        const res = await fetch('api/users');
+        const res = await fetch('api/users.php');
         appState.users = await res.json();
     } catch (e) { console.error(e); }
 }
 
 async function fetchAllTasks() {
     try {
-        const res = await fetch('api/tasks');
+        const res = await fetch('api/tasks.php');
         appState.tasks = await res.json();
     } catch (e) { console.error(e); }
 }

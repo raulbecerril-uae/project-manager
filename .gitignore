@@ -3,3 +3,14 @@ node_modules/
 *.log
 .DS_Store
 add-upcoming.js
+
+# PHP specific
+vendor/
+composer.lock
+
+# Database credentials (if using separate config)
+config.local.php
+
+# Backup files
+*.bak
+*.backup

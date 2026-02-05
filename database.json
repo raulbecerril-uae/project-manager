@@ -44,7 +44,23 @@
         "C++",
         "Arduino",
         "Unity"
-      ]
+      ],
+      "estimated_duration": "1 month",
+      "required_team": [
+        {
+          "role": "Game Developer",
+          "count": 1
+        },
+        {
+          "role": "Arduino Specialist",
+          "count": 1
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Game Developer\",\"count\":1},{\"role\":\"Arduino Specialist\",\"count\":1},{\"role\":\"3D Designer\",\"count\":1}]"
     },
     {
       "id": 2,
@@ -55,7 +71,23 @@
       "start_date": "2025-11-01",
       "deadline": "2025-12-05",
       "priority": "High",
-      "tech_stack_json": "[\"Unity\", \"C++\", \"Arduino\"]"
+      "tech_stack_json": "[\"Unity\", \"C++\", \"Arduino\"]",
+      "estimated_duration": "2 months",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 2
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        },
+        {
+          "role": "Hardware Engineer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":2},{\"role\":\"3D Designer\",\"count\":1},{\"role\":\"Hardware Engineer\",\"count\":1}]"
     },
     {
       "id": 3,
@@ -66,7 +98,19 @@
       "start_date": "2025-11-10",
       "deadline": "2025-11-24",
       "priority": "Medium",
-      "tech_stack_json": "[\"JavaScript\", \"WebSocket\", \"MongoDB\"]"
+      "tech_stack_json": "[\"JavaScript\", \"WebSocket\", \"MongoDB\"]",
+      "estimated_duration": "2 weeks",
+      "required_team": [
+        {
+          "role": "Full-Stack Developer",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Full-Stack Developer\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 4,
@@ -77,13 +121,29 @@
       "start_date": "2025-11-15",
       "deadline": "2025-12-06",
       "priority": "Critical",
-      "tech_stack_json": "[\"React\", \"Express\", \"MySQL\"]"
+      "tech_stack_json": "[\"React\", \"Express\", \"MySQL\"]",
+      "estimated_duration": "3 weeks",
+      "required_team": [
+        {
+          "role": "Backend Developer",
+          "count": 1
+        },
+        {
+          "role": "Frontend Developer",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Backend Developer\",\"count\":1},{\"role\":\"Frontend Developer\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 5,
       "name": "Cycle Game - Rebuild",
       "description": "Rebuild the 'Cycle Game' with Arduino connection and develop a new game platform with a new API server on no1events server.",
-      "status": "Done",
+      "status": "Planning",
       "progress": 100,
       "start_date": "2025-12-01",
       "deadline": "2026-01-05",
@@ -94,18 +154,57 @@
         "Arduino",
         "C++",
         "API"
-      ]
+      ],
+      "estimated_duration": "1 month",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 1
+        },
+        {
+          "role": "Backend Developer",
+          "count": 1
+        },
+        {
+          "role": "Arduino Specialist",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":1},{\"role\":\"Backend Developer\",\"count\":1},{\"role\":\"Arduino Specialist\",\"count\":1}]"
     },
     {
       "id": 6,
       "name": "Fast Feet Game - Rebuild",
-      "description": "Rebuild the 'Fast Feet' game with Arduino connected to sensors and lights. Creating a responsive game that reacts to player movements.",
+      "description": "Rebuild the 'Fast Feet' game with Arduino connected to sensors and lights. Creating a responsive game that reacts to player movements. 34234324dsfsdfd",
       "status": "In Development",
       "progress": 10,
       "start_date": "2025-12-05",
-      "deadline": "2026-01-09",
+      "deadline": "2025-12-19",
       "priority": "High",
-      "tech_stack_json": "[\"Arduino\", \"C++\", \"Unity\", \"Sensors\"]"
+      "tech_stack_json": "[\"Arduino\",\"C++\",\"Unity\",\"Sensors\"]",
+      "tech_stack": [
+        "Arduino",
+        "C++",
+        "Unity",
+        "Sensors"
+      ],
+      "estimated_duration": "1 month",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 1
+        },
+        {
+          "role": "Arduino Specialist",
+          "count": 1
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":1},{\"role\":\"Arduino Specialist\",\"count\":1},{\"role\":\"3D Designer\",\"count\":1}]",
+      "media_url": "/uploads/1770271773026-videoframe_0 (2).png"
     },
     {
       "id": 8,
@@ -116,7 +215,19 @@
       "start_date": "2025-12-10",
       "deadline": "2025-12-13",
       "priority": "Low",
-      "tech_stack_json": "[\"JavaScript\", \"WebSocket\", \"React\"]"
+      "tech_stack_json": "[\"JavaScript\", \"WebSocket\", \"React\"]",
+      "estimated_duration": "1 week",
+      "required_team": [
+        {
+          "role": "Frontend Developer",
+          "count": 1
+        },
+        {
+          "role": "Graphic Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Frontend Developer\",\"count\":1},{\"role\":\"Graphic Designer\",\"count\":1}]"
     },
     {
       "id": 9,
@@ -127,11 +238,23 @@
       "start_date": "2025-12-15",
       "deadline": "2025-12-17",
       "priority": "Medium",
-      "tech_stack_json": "[\"React\", \"Next.js\", \"Tailwind\"]"
+      "tech_stack_json": "[\"React\", \"Next.js\", \"Tailwind\"]",
+      "estimated_duration": "1 week",
+      "required_team": [
+        {
+          "role": "Frontend Developer",
+          "count": 1
+        },
+        {
+          "role": "Graphic Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Frontend Developer\",\"count\":1},{\"role\":\"Graphic Designer\",\"count\":1}]"
     },
     {
       "id": 12,
-      "start_date": "2026-01-21T00:00:00.000Z",
+      "start_date": "2026-01-21",
       "description": "Design and develop high impact 3D holographic visual content. New animations, product visualizations, and branding sequences.",
       "tech_stack": [
         "Hologram",
@@ -139,10 +262,23 @@
         "Animation"
       ],
       "name": "Showroom: Holographic Fan",
-      "deadline": "2026-02-15T00:00:00.000Z",
+      "deadline": "2026-02-15",
       "status": "In Development",
       "priority": "High",
-      "tech_stack_json": "[\"Hologram\",\"3D\",\"Animation\"]"
+      "tech_stack_json": "[\"Hologram\",\"3D\",\"Animation\"]",
+      "estimated_duration": "3 weeks",
+      "required_team": [
+        {
+          "role": "3D Designer",
+          "count": 2
+        },
+        {
+          "role": "Animator",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"3D Designer\",\"count\":2},{\"role\":\"Animator\",\"count\":1}]",
+      "media_url": "/uploads/1770277481742-vertical-alien-soldier-hologram-4k-4k-2025-12-09-03-15-05-utc (online-video-cutter.com).mp4"
     },
     {
       "id": 13,
@@ -157,7 +293,19 @@
       "deadline": "2026-02-15T00:00:00.000Z",
       "status": "In Development",
       "priority": "High",
-      "tech_stack_json": "[\"Touchscreen\",\"UI/UX\",\"Interactive\"]"
+      "tech_stack_json": "[\"Touchscreen\",\"UI/UX\",\"Interactive\"]",
+      "estimated_duration": "2 weeks",
+      "required_team": [
+        {
+          "role": "Frontend Developer",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Frontend Developer\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 14,
@@ -172,7 +320,19 @@
       "deadline": "2026-02-15T00:00:00.000Z",
       "status": "In Development",
       "priority": "High",
-      "tech_stack_json": "[\"Touchscreen\",\"CMS\",\"Logic\"]"
+      "tech_stack_json": "[\"Touchscreen\",\"CMS\",\"Logic\"]",
+      "estimated_duration": "2 weeks",
+      "required_team": [
+        {
+          "role": "Frontend Developer",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Frontend Developer\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 15,
@@ -187,16 +347,28 @@
       "deadline": "2026-02-15T00:00:00.000Z",
       "status": "In Development",
       "priority": "High",
-      "tech_stack_json": "[\"LED\",\"Motion Graphics\",\"4K\"]"
+      "tech_stack_json": "[\"LED\",\"Motion Graphics\",\"4K\"]",
+      "estimated_duration": "3 weeks",
+      "required_team": [
+        {
+          "role": "Motion Designer",
+          "count": 1
+        },
+        {
+          "role": "Video Editor",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Motion Designer\",\"count\":1},{\"role\":\"Video Editor\",\"count\":1}]"
     },
     {
       "id": 16,
       "name": "Photobooth Experience",
       "description": "Develop multiple photobooth experience versions designed for events and entertainment environments. Features may include AI background replacement, augmented reality filters, branded overlays, facial tracking effects, gesture based capture, instant sharing through QR code or mobile download, and multiplayer photo sessions.",
-      "status": "Upcoming",
+      "status": "Planning",
       "progress": 0,
-      "start_date": null,
-      "deadline": null,
+      "start_date": "2026-01-12",
+      "deadline": "2026-02-10",
       "priority": "Medium",
       "tech_stack_json": "[\"AI\",\"AR\",\"Computer Vision\",\"Mobile\"]",
       "tech_stack": [
@@ -204,16 +376,36 @@
         "AR",
         "Computer Vision",
         "Mobile"
-      ]
+      ],
+      "estimated_duration": "2 months",
+      "required_team": [
+        {
+          "role": "Frontend Developer",
+          "count": 2
+        },
+        {
+          "role": "Backend Developer",
+          "count": 1
+        },
+        {
+          "role": "AI Specialist",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Frontend Developer\",\"count\":2},{\"role\":\"Backend Developer\",\"count\":1},{\"role\":\"AI Specialist\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 17,
       "name": "Kahoot System Upgrade",
       "description": "Develop an upgraded interactive quiz and audience engagement platform with enhanced UI, custom branding, real time participation via mobile devices, leaderboard systems, analytics dashboards, and multiple question formats.",
-      "status": "Upcoming",
+      "status": "Planning",
       "progress": 0,
-      "start_date": null,
-      "deadline": null,
+      "start_date": "",
+      "deadline": "",
       "priority": "High",
       "tech_stack_json": "[\"JavaScript\",\"WebSocket\",\"React\",\"Analytics\"]",
       "tech_stack": [
@@ -221,7 +413,24 @@
         "WebSocket",
         "React",
         "Analytics"
-      ]
+      ],
+      "estimated_duration": "1.5 months",
+      "required_team": [
+        {
+          "role": "Full-Stack Developer",
+          "count": 2
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        },
+        {
+          "role": "Graphic Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Full-Stack Developer\",\"count\":2},{\"role\":\"UI/UX Designer\",\"count\":1},{\"role\":\"Graphic Designer\",\"count\":1}]",
+      "media_url": "/uploads/1770274840283-IMG_9267.MP4"
     },
     {
       "id": 18,
@@ -237,7 +446,19 @@
         "Mobile",
         "LED Integration",
         "Real-time Sync"
-      ]
+      ],
+      "estimated_duration": "1 month",
+      "required_team": [
+        {
+          "role": "Full-Stack Developer",
+          "count": 2
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Full-Stack Developer\",\"count\":2},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 19,
@@ -253,7 +474,23 @@
         "WebSocket",
         "Typography",
         "Mobile"
-      ]
+      ],
+      "estimated_duration": "3 weeks",
+      "required_team": [
+        {
+          "role": "Frontend Developer",
+          "count": 1
+        },
+        {
+          "role": "Backend Developer",
+          "count": 1
+        },
+        {
+          "role": "Graphic Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Frontend Developer\",\"count\":1},{\"role\":\"Backend Developer\",\"count\":1},{\"role\":\"Graphic Designer\",\"count\":1}]"
     },
     {
       "id": 20,
@@ -270,7 +507,23 @@
         "Canvas API",
         "Mobile",
         "Real-time"
-      ]
+      ],
+      "estimated_duration": "2 months",
+      "required_team": [
+        {
+          "role": "Full-Stack Developer",
+          "count": 2
+        },
+        {
+          "role": "AI Specialist",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Full-Stack Developer\",\"count\":2},{\"role\":\"AI Specialist\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 21,
@@ -286,7 +539,27 @@
         "Unity",
         "Gesture Tracking",
         "Mobile"
-      ]
+      ],
+      "estimated_duration": "3 months",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 2
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        },
+        {
+          "role": "Animator",
+          "count": 1
+        },
+        {
+          "role": "Game Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":2},{\"role\":\"3D Designer\",\"count\":1},{\"role\":\"Animator\",\"count\":1},{\"role\":\"Game Designer\",\"count\":1}]"
     },
     {
       "id": 22,
@@ -302,7 +575,27 @@
         "Computer Vision",
         "LED",
         "Particle Systems"
-      ]
+      ],
+      "estimated_duration": "2 months",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 1
+        },
+        {
+          "role": "Computer Vision Specialist",
+          "count": 1
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        },
+        {
+          "role": "Animator",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":1},{\"role\":\"Computer Vision Specialist\",\"count\":1},{\"role\":\"3D Designer\",\"count\":1},{\"role\":\"Animator\",\"count\":1}]"
     },
     {
       "id": 23,
@@ -318,7 +611,23 @@
         "Unity",
         "Mobile",
         "Motion Tracking"
-      ]
+      ],
+      "estimated_duration": "2 months",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 2
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":2},{\"role\":\"3D Designer\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1}]"
     },
     {
       "id": 24,
@@ -334,7 +643,23 @@
         "Kinect",
         "Computer Vision",
         "Unity"
-      ]
+      ],
+      "estimated_duration": "1.5 months",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 1
+        },
+        {
+          "role": "Computer Vision Specialist",
+          "count": 1
+        },
+        {
+          "role": "3D Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":1},{\"role\":\"Computer Vision Specialist\",\"count\":1},{\"role\":\"3D Designer\",\"count\":1}]"
     },
     {
       "id": 25,
@@ -350,7 +675,23 @@
         "Motion Tracking",
         "Canvas API",
         "Touch"
-      ]
+      ],
+      "estimated_duration": "1 month",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 1
+        },
+        {
+          "role": "UI/UX Designer",
+          "count": 1
+        },
+        {
+          "role": "Graphic Designer",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":1},{\"role\":\"UI/UX Designer\",\"count\":1},{\"role\":\"Graphic Designer\",\"count\":1}]"
     },
     {
       "id": 26,
@@ -366,7 +707,40 @@
         "Unity",
         "Mobile",
         "Gesture Input"
-      ]
+      ],
+      "estimated_duration": "3 months",
+      "required_team": [
+        {
+          "role": "Unity Developer",
+          "count": 2
+        },
+        {
+          "role": "Game Designer",
+          "count": 1
+        },
+        {
+          "role": "2D/3D Artist",
+          "count": 1
+        },
+        {
+          "role": "Animator",
+          "count": 1
+        }
+      ],
+      "required_team_json": "[{\"role\":\"Unity Developer\",\"count\":2},{\"role\":\"Game Designer\",\"count\":1},{\"role\":\"2D/3D Artist\",\"count\":1},{\"role\":\"Animator\",\"count\":1}]"
+    },
+    {
+      "id": 27,
+      "name": "Holographic idea",
+      "description": "idea description",
+      "status": "Idea",
+      "priority": "Medium",
+      "tech_stack": [],
+      "start_date": "2026-02-05T07:15:22.826Z",
+      "deadline": null,
+      "media_url": "/uploads/1770275722823-videoframe_0 (1).png",
+      "progress": 0,
+      "tech_stack_json": "[]"
     }
   ],
   "tasks": [

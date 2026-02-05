@@ -8,9 +8,14 @@ const PORT = 3000;
 const DB_FILE = path.join(__dirname, 'database.json');
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '50mb' })); // Increase limit for base64 images
 app.use(express.static(__dirname));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploads folder
 console.log('Serving static files from:', __dirname);
+
+// Import upload router
+const uploadRouter = require('./api/upload');
+app.use('/api', uploadRouter);
 
 // Helper to read DB
 async function readDB() {
@@ -129,6 +134,12 @@ app.post('/api/tasks', async (req, res) => {
     db.tasks.push(newTask);
     await writeDB(db);
     res.json({ message: "Task created", id: newTask.id });
+});
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+    console.error('Unhandled Server Error:', err);
+    res.status(500).json({ error: 'Internal Server Error', details: err.message });
 });
 
 // Start Server

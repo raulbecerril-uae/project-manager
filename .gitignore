@@ -4,6 +4,9 @@ node_modules/
 .DS_Store
 add-upcoming.js
 
+# Uploads folder (user-generated content)
+uploads/
+
 # PHP specific
 vendor/
 composer.lock

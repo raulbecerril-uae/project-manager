@@ -16,6 +16,7 @@ try {
                 if ($project) {
                     // Parse JSON fields
                     $project['tech_stack'] = json_decode($project['tech_stack_json']);
+                    $project['required_team'] = json_decode($project['required_team_json'] ?? '[]');
                     echo json_encode($project);
                 } else {
                     http_response_code(404);
@@ -29,6 +30,7 @@ try {
                 // Parse JSON fields for each project
                 foreach ($projects as &$project) {
                     $project['tech_stack'] = json_decode($project['tech_stack_json']);
+                    $project['required_team'] = json_decode($project['required_team_json'] ?? '[]');
                 }
 
                 echo json_encode($projects);
@@ -40,8 +42,8 @@ try {
             $data = json_decode(file_get_contents('php://input'), true);
 
             $stmt = $conn->prepare("
-                INSERT INTO projects (name, description, status, progress, start_date, deadline, priority, tech_stack_json)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO projects (name, description, status, progress, start_date, deadline, priority, tech_stack_json, estimated_duration, required_team_json)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ");
 
             $stmt->execute([
@@ -52,7 +54,9 @@ try {
                 $data['start_date'] ?? null,
                 $data['deadline'] ?? null,
                 $data['priority'] ?? 'Medium',
-                isset($data['tech_stack']) ? json_encode($data['tech_stack']) : '[]'
+                isset($data['tech_stack']) ? json_encode($data['tech_stack']) : '[]',
+                $data['estimated_duration'] ?? null,
+                isset($data['required_team']) ? json_encode($data['required_team']) : '[]'
             ]);
 
             $newId = $conn->lastInsertId();
@@ -62,6 +66,7 @@ try {
             $stmt->execute([$newId]);
             $project = $stmt->fetch();
             $project['tech_stack'] = json_decode($project['tech_stack_json']);
+            $project['required_team'] = json_decode($project['required_team_json'] ?? '[]');
 
             http_response_code(201);
             echo json_encode($project);
@@ -80,7 +85,8 @@ try {
             $stmt = $conn->prepare("
                 UPDATE projects 
                 SET name = ?, description = ?, status = ?, progress = ?, 
-                    start_date = ?, deadline = ?, priority = ?, tech_stack_json = ?
+                    start_date = ?, deadline = ?, priority = ?, tech_stack_json = ?,
+                    estimated_duration = ?, required_team_json = ?
                 WHERE id = ?
             ");
 
@@ -93,6 +99,8 @@ try {
                 $data['deadline'] ?? null,
                 $data['priority'] ?? 'Medium',
                 isset($data['tech_stack']) ? json_encode($data['tech_stack']) : '[]',
+                $data['estimated_duration'] ?? null,
+                isset($data['required_team']) ? json_encode($data['required_team']) : '[]',
                 $data['id']
             ]);
 
@@ -101,6 +109,7 @@ try {
             $stmt->execute([$data['id']]);
             $project = $stmt->fetch();
             $project['tech_stack'] = json_decode($project['tech_stack_json']);
+            $project['required_team'] = json_decode($project['required_team_json'] ?? '[]');
 
             echo json_encode($project);
             break;

@@ -59,9 +59,11 @@
    - `assets/` folder (with all CSS/JS files)
    - `api/` folder (with all PHP files)
    - `.htaccess`
-4. Set file permissions:
+4. Create an `uploads/` folder in `public_html`
+5. Set file permissions:
    - Files: 644
    - Directories: 755
+   - **Important**: Ensure `uploads/` folder is writable (755 is usually sufficient, but check hosting requirements)
 
 #### Option B: Using FTP
 
@@ -131,7 +133,10 @@ public_html/
     ├── config.php
     ├── projects.php
     ├── users.php
-    └── tasks.php
+    ├── tasks.php
+    └── upload.php
+└── uploads/
+    └── (uploaded images/videos)
 ```
 
 ## Support

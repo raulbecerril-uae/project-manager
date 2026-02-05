@@ -587,6 +587,14 @@ function renderDetailView() {
                         </select>
                     </div>
                     <div>
+                        <label class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-2">Progress</label>
+                        <div class="flex items-center gap-4">
+                            <input type="range" id="edit-progress" min="0" max="100" value="${project.progress || 0}" 
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" oninput="document.getElementById('edit-progress-val').innerText = this.value + '%'">
+                            <span id="edit-progress-val" class="text-sm font-bold text-gray-900 min-w-[3ch]">${project.progress || 0}%</span>
+                        </div>
+                    </div>
+                    <div>
                         <label class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-2">Priority</label>
                         <select id="edit-priority" class="w-full bg-gray-50 border-none rounded-xl px-4 py-2 text-sm font-bold focus:ring-2 focus:ring-blue-200">
                             <option ${project.priority === 'Low' ? 'selected' : ''}>Low</option>
@@ -686,6 +694,15 @@ function renderDetailView() {
                             <span class="font-bold text-gray-900 bg-gray-100 px-4 py-2 rounded-xl text-sm inline-block">${project.status}</span>
                         </div>
                         <div>
+                            <span class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-2">Progress</span>
+                            <div class="flex items-center gap-3">
+                                <div class="flex-1 bg-gray-100 rounded-full h-2.5 overflow-hidden min-w-[100px]">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: ${project.progress || 0}%"></div>
+                                </div>
+                                <span class="text-sm font-bold text-gray-700">${project.progress || 0}%</span>
+                            </div>
+                        </div>
+                        <div>
                             <span class="text-xs text-gray-400 font-bold uppercase tracking-wider block mb-2">Priority</span>
                             <span class="font-bold text-gray-900 bg-gray-100 px-4 py-2 rounded-xl text-sm inline-block">${project.priority}</span>
                         </div>
@@ -773,6 +790,7 @@ window.saveEdit = async () => {
         name: document.getElementById('edit-name').value,
         description: document.getElementById('edit-desc').value,
         status: document.getElementById('edit-status').value,
+        progress: parseInt(document.getElementById('edit-progress').value) || 0,
         priority: document.getElementById('edit-priority').value,
         start_date: document.getElementById('edit-start').value,
         deadline: document.getElementById('edit-deadline').value,
@@ -905,7 +923,7 @@ window.deleteProject = async () => {
         await fetch(`api/projects/${appState.currentProject.id}`, { method: 'DELETE' });
         closeModal('projectDetailModal');
         await fetchProjects();
-        renderProjects(appState.projects);
+        renderSectionData(appState.activeSection);
         updateProjectStats();
     } catch (e) { console.error('Delete failed', e); }
 };

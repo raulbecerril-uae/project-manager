@@ -266,7 +266,7 @@
             title="Toggle View">
             <i data-lucide="list" class="w-5 h-5"></i>
           </button>
-          <button onclick="alert('Add Member not implemented yet')"
+          <button onclick="openUserModal()"
             class="bg-gray-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition-transform hover:scale-105 shadow-lg shadow-gray-300 relative group"
             title="Add Member">
             <i data-lucide="plus" class="w-5 h-5"></i>
@@ -299,10 +299,8 @@
         </div>
       </div>
 
-      <div id="section-settings" class="section-view hidden animate-fade-in w-full max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">Settings</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div id="section-settings" class="section-view hidden animate-fade-in w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
           <!-- Profile Card -->
           <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
             <div class="flex items-center gap-6 mb-6">
@@ -476,6 +474,61 @@
         </div>
         <button type="submit" class="w-full bg-gray-900 text-white rounded-xl py-3 font-semibold hover:bg-black">Create
           Project</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- User Management Modal -->
+  <div id="userModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-gray-500/20 backdrop-blur-sm" onclick="closeModal('userModal')"></div>
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md relative z-10 p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold text-gray-900" id="user-modal-title">New Team Member</h3>
+        <button onclick="closeModal('userModal')" class="text-gray-400 hover:text-gray-900">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="user-form" class="space-y-4" onsubmit="window.saveUser(event)">
+        <input type="hidden" name="id" id="user-id">
+
+        <div>
+          <label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Name</label>
+          <input type="text" name="name" id="user-name" required placeholder="Full Name"
+            class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Title</label>
+          <input type="text" name="title" id="user-title" placeholder="e.g. Senior Developer"
+            class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Role</label>
+          <select name="role" id="user-role"
+            class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200">
+            <option value="Team">Team Member</option>
+            <option value="Manager">Manager</option>
+            <option value="Admin">Admin</option>
+            <option value="Observer">Observer</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Avatar URL</label>
+          <input type="url" name="avatar_url" id="user-avatar" placeholder="https://..."
+            class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200">
+          <p class="text-xs text-gray-400 mt-1 ml-1">Leave empty to auto-generate</p>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit"
+            class="w-full bg-gray-900 text-white rounded-xl py-3 font-semibold hover:bg-black transition-colors"
+            id="user-submit-btn">
+            Create Member
+          </button>
+        </div>
       </form>
     </div>
   </div>

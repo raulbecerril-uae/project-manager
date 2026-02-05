@@ -177,7 +177,7 @@
       "name": "Fast Feet Game - Rebuild",
       "description": "Rebuild the 'Fast Feet' game with Arduino connected to sensors and lights. Creating a responsive game that reacts to player movements. 34234324dsfsdfd",
       "status": "In Development",
-      "progress": 10,
+      "progress": 85,
       "start_date": "2025-12-05",
       "deadline": "2025-12-19",
       "priority": "High",
@@ -263,7 +263,7 @@
       ],
       "name": "Showroom: Holographic Fan",
       "deadline": "2026-02-15",
-      "status": "In Development",
+      "status": "Delivered",
       "priority": "High",
       "tech_stack_json": "[\"Hologram\",\"3D\",\"Animation\"]",
       "estimated_duration": "3 weeks",
@@ -278,7 +278,8 @@
         }
       ],
       "required_team_json": "[{\"role\":\"3D Designer\",\"count\":2},{\"role\":\"Animator\",\"count\":1}]",
-      "media_url": "/uploads/1770277481742-vertical-alien-soldier-hologram-4k-4k-2025-12-09-03-15-05-utc (online-video-cutter.com).mp4"
+      "media_url": "/uploads/1770277481742-vertical-alien-soldier-hologram-4k-4k-2025-12-09-03-15-05-utc (online-video-cutter.com).mp4",
+      "progress": 100
     },
     {
       "id": 13,
@@ -731,14 +732,13 @@
     },
     {
       "id": 27,
-      "name": "Holographic idea",
-      "description": "idea description",
+      "name": "4645",
+      "description": "654645",
       "status": "Idea",
       "priority": "Medium",
       "tech_stack": [],
-      "start_date": "2026-02-05T07:15:22.826Z",
+      "start_date": "2026-02-05T10:32:23.336Z",
       "deadline": null,
-      "media_url": "/uploads/1770275722823-videoframe_0 (1).png",
       "progress": 0,
       "tech_stack_json": "[]"
     }

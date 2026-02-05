@@ -54,6 +54,57 @@ try {
             echo json_encode($user);
             break;
 
+        case 'PUT':
+            // Update user
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            if (!isset($data['id'])) {
+                http_response_code(400);
+                echo json_encode(['error' => 'User ID required']);
+                exit();
+            }
+
+            $stmt = $conn->prepare("
+                UPDATE users 
+                SET name = ?, role = ?, title = ?, avatar_url = ?
+                WHERE id = ?
+            ");
+
+            $stmt->execute([
+                $data['name'],
+                $data['role'] ?? 'Team',
+                $data['title'] ?? '',
+                $data['avatar_url'] ?? '',
+                $data['id']
+            ]);
+
+            // Fetch and return updated user
+            $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+            $stmt->execute([$data['id']]);
+            $user = $stmt->fetch();
+
+            echo json_encode($user);
+            break;
+
+        case 'DELETE':
+            // Delete user
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            // Allow delete by URL param or body
+            $id = $data['id'] ?? $_GET['id'] ?? null;
+
+            if (!$id) {
+                http_response_code(400);
+                echo json_encode(['error' => 'User ID required']);
+                exit();
+            }
+
+            $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+            $stmt->execute([$id]);
+
+            echo json_encode(['success' => true, 'message' => 'User deleted']);
+            break;
+
         default:
             http_response_code(405);
             echo json_encode(['error' => 'Method not allowed']);
